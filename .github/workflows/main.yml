@@ -37,14 +37,14 @@ jobs:
   job_3:
     name: Display results
     needs: job_2
-    runs-on: windows-latest
+    runs-on: macOS-latest
     steps:
       - name: Download math result for job 2
         uses: actions/download-artifact@v3
         with:
           name: homework
       - name: Print the final result
-        shell: pwsh
+        shell: bash
         run: |
           value=`cat math-homework.txt`
           echo The result is $value
